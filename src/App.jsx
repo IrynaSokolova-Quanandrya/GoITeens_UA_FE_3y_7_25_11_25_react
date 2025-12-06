@@ -1,10 +1,13 @@
 import './App.css'
+import { PaintingList } from './components/PaintingList'
 import { LessonTheme } from './components/LessonTheame'
+import paintingData from './painting.json'
 
 const App = () => {
 	return (
 		<div className='main'>
-			<LessonTheme/>
+            {/* <LessonTheme /> */}
+            <PaintingList data={ paintingData} />
 		</div>
 	)
 }
