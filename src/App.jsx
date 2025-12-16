@@ -33,3 +33,24 @@ const Item = ({title, price}) => {
 		</li>
 	)
 }
+
+
+
+
+               cb()              cb()             cb()
+const arr=[{ a: 5, b: 10 }, { a: 5, b: 10 }, { a: 5, b: 10 }]
+
+arr.map((point) => {
+	return <Item/>
+})
+[<li>
+		<p>{point.a}</p>
+		<p>{ point.a}</p>
+	</li>, return1, retuyrn2, <li>
+		<p>{point.a}</p>
+		<p>{ point.a}</p>
+</li>, 
+	<li>
+		<p>{point.a}</p>
+		<p>{ point.a}</p>
+	</li>]
