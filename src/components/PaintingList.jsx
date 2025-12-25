@@ -1,11 +1,12 @@
 import { PaintingItem } from './PaintingItem'
 
-export const PaintingList = props => {
+export const PaintingList = ({data, icon: Icon}) => {
 	return (
 		<ul>
-			{props.data.map(item => {
+			{data.map(item => {
 				return (
 					<li key={item.id}>
+						<Icon/>
 						<img src={item.url} alt='...' width='200' />
 						<h2>{item.title}</h2>
 						<p>
