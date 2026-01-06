@@ -1,11 +1,13 @@
+import { List, Item } from './Painting.styled'
 import { PaintingItem } from './PaintingItem'
 
 export const PaintingList = ({data, icon: Icon}) => {
 	return (
-		<ul>
+		<>
+		<List>
 			{data.map(item => {
 				return (
-					<li key={item.id}>
+					<Item key={item.id}>
 						<Icon/>
 						<img src={item.url} alt='...' width='200' />
 						<h2>{item.title}</h2>
@@ -15,9 +17,10 @@ export const PaintingList = ({data, icon: Icon}) => {
 						<p>Ціна:{item.price} грн</p>
 						<p>Наявність: {item.quantity} </p>
 						<button type='button'>Додати в кошик</button>
-					</li>
+					</Item>
 				)
 			})}
-		</ul>
+		</List>
+		</>
 	)
 }

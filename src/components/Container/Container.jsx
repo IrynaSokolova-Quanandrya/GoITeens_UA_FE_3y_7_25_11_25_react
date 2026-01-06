@@ -1,4 +1,5 @@
-import css from './Container.module.css'
+import { StyledContainer } from "./Container.styled"
+
 export function Container({children}) {
-    return <div className={css.container}>{ children}</div>
+    return <StyledContainer>{ children}</StyledContainer>
 }
