@@ -10,6 +10,7 @@ import { AiFillHeart } from "react-icons/ai";
 import { Container } from './components/Container/Container'
 import { PaintingList } from './components/Painting/PaintingList'
 import { Alert } from './components/Alert/Alert'
+import { Counter } from './components/Counter/Counter'
 
 /**
  * 
@@ -23,9 +24,10 @@ import { Alert } from './components/Alert/Alert'
 export const App = () => {
 	return (
 		<div>
-			<Alert type='error'/>
+			{/* <Alert type='error'/>
 			<Alert type='success'/>
-			<Alert type='warning'/>
+			<Alert type='warning' /> */}
+			<Counter/>
 			{/* <Container>
 				<PaintingList
 					data={paintingData}
