@@ -1,7 +1,6 @@
 import "./Coloroptions.css"
 import css from './ColorPicker.module.css'
-export const ColorOptions = ({ options }) => {
-   
+export const ColorOptions = ({ options }) => {   
 	return (
 		<div>
 			<h2>Color Picker</h2>
