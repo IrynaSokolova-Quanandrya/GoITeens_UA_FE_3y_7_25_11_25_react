@@ -1,5 +1,6 @@
 import './App.css';
 import { ColorOptions } from './components/ColorPicker/ColorOptions';
+import { Container } from './components/Container/Container';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -12,10 +13,21 @@ const colorPickerOptions = [
 
 export const App = () => {
 	return (
-		<div>			
-			<ColorOptions options={ colorPickerOptions }/>
-		</div>
+    <StickerList stickers={ stickers} />
 	)
 }
 
+const StickerList = ({stickers}) => {
+  return <ul>
+    {stickers.map((sticker) => {
+      return <Sticker img={sticker.img} label={ sticker.label} />
+    })}
+  </ul>
+}
 
+const Sticker = ({img, lable}) => {
+  return <li>
+    <img src={img} alt="" />
+    <p>{label}</p>
+  </li>
+}
