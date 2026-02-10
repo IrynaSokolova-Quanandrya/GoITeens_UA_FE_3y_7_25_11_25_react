@@ -1,33 +1,99 @@
-import './App.css';
-import { ColorOptions } from './components/ColorPicker/ColorOptions';
-import { Container } from './components/Container/Container';
+import React from 'react'
+import './App.css'
+import { ColorOptions } from './components/ColorPicker/ColorOptions'
+import { Container } from './components/Container/Container'
 
-const colorPickerOptions = [
-  { label: 'red', color: '#F44336' },
-  { label: 'green', color: '#4CAF50' },
-  { label: 'blue', color: '#2196F3' },
-  { label: 'grey', color: '#607D8B' },
-  { label: 'pink', color: '#E91E63' },
-  { label: 'indigo', color: '#3F51B5' },
-];
+export class App extends React.Component {
+	state = {
+		name: '',
+		mail: '',
+		expirence: '',
+		agree: false,
+	}
 
-export const App = () => {
-	return (
-    <StickerList stickers={ stickers} />
-	)
-}
+	handleChange = e => {
+		const { name, value } = e.target
+		this.setState({ [name]: value })
+	}
 
-const StickerList = ({stickers}) => {
-  return <ul>
-    {stickers.map((sticker) => {
-      return <Sticker img={sticker.img} label={ sticker.label} />
-    })}
-  </ul>
-}
+	handleCheckChange = () => {
+		this.setState(prevState =>({ agree: !prevState.agree })
+		)
+	}
 
-const Sticker = ({img, lable}) => {
-  return <li>
-    <img src={img} alt="" />
-    <p>{label}</p>
-  </li>
+	render() {
+		return (
+			<Container>
+				<form>
+					<label>
+						{' '}
+						Ім'я
+						<input
+							onChange={this.handleChange}
+							type='text'
+							name='name'
+							value={this.state.name}
+						/>
+					</label>
+					<hr />
+					<label>
+						{' '}
+						Електронна адреса
+						<input
+							onChange={this.handleChange}
+							type='email'
+							name='mail'
+							value={this.state.mail}
+						/>
+					</label>
+					<hr />
+					<b>Професійний рівень</b>
+					<hr />
+					<label>
+						{' '}
+						junior
+						<input
+							onChange={this.handleChange}
+							type='radio'
+							name='expirence'
+							value='junior'
+							checked={this.state.expirence === 'junior'}
+						/>
+					</label>
+					<label>
+						{' '}
+						middle
+						<input
+							onChange={this.handleChange}
+							type='radio'
+							name='expirence'
+							value='middle'
+							checked={this.state.expirence === 'middle'}
+						/>
+					</label>
+					<label>
+						{' '}
+						senior
+						<input
+							onChange={this.handleChange}
+							type='radio'
+							name='expirence'
+							value='senior'
+							checked={this.state.expirence === 'senior'}
+						/>
+					</label>
+					<hr />
+					<label>
+						<input
+							onChange={this.handleCheckChange}
+							type='checkbox'
+							name='agree'
+							checked={this.state.agree}
+						/>
+						Погоджуюсь з умовами
+					</label>
+				</form>
+			</Container>
+		)
+	}
 }
