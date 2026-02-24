@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Form } from "./TodoEditor.styled";
 
 export class TodoEditor extends Component{
     state={
@@ -17,12 +18,12 @@ export class TodoEditor extends Component{
 
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit}>
                 <label>Напишіть свою задачу                    
                     <textarea value={this.state.textValue} onChange={this.handleChange}/>                    
                 </label>
                 <button type="submit">Create</button>           
-            </form>
+            </Form>
         )
     }
 }
