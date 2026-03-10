@@ -1,38 +1,40 @@
-import React from 'react'
-import { ChangeBtn } from './changeBtn'
+import React, { useEffect, useState } from 'react'
 import { CounterContent } from './CounterContent'
+import { ChangeBtn } from './ChangeBtn'
 
-export class Counter extends React.Component {
+export const Counter = ({initialValue})=> {
 
-	state = {
-		value: this.props.initialValue
+	const [value, setValue] = useState(0)
+	const [number, setNumber] = useState(0)
+
+	useEffect(() => {
+		
+		return ()=>{}
+	}, [])
+
+	const handleIncrement = () => {
+		console.log('number ')
+		setNumber(value + 1)
 	}
-	
-	handleIncrement = (event) => {
+	const handleDecrement = () => {
 		console.log('increment ')
-		// this.setState({value:1})
-		this.setState(prevState=>({value:prevState.value += 1}))
-	}
-	handleDecrement = (event) => {
-		console.log('increment ')
-		// this.setState({value:1})
-		this.setState(prevState=>({value:prevState.value -= 1}))
+		setValue(value - 1)
 	}
 
-	render() {
+
+
 		return (
 			<div className='position-absolute top-50 start-50 translate-middle'>
 				<div className='card bg-dark text-white ' style={{ width: '600px' }}>
 					<div className='card-body'>
 						<h5 className='card-title text-center fs-1'>Counter</h5>
-						<CounterContent value={ this.state.value} />
+						<CounterContent value={ value} />
 						<ChangeBtn
-							onIncrement={this.handleIncrement}
-							onDecrement = {this.handleDecrement}
+							onIncrement={handleIncrement}
+							onDecrement = {handleDecrement}
 						/>
 					</div>
 				</div>
 			</div>
 		)
-	}
 }

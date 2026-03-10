@@ -71,26 +71,17 @@ export class App extends Component {
 	render() {
 		return (
 			<>
-				<button onClick={this.toggleModal} type='button'>
+			{/* <button onClick={this.toggleModal} type='button'>
 					Open modal
 				</button>
 
 				{this.state.showModal && (
 					<Modal>
-						<h1>Hello</h1>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-							laborum? Aut consectetur quo aliquam neque possimus ipsa
-							blanditiis placeat distinctio illo, nihil magni repellat similique
-							hic quas accusantium voluptatum quos labore reiciendis officiis a
-							atque explicabo ullam reprehenderit! Voluptates voluptatum odit
-							illo rem dolor earum quidem a sint unde quaerat?
-						</p>
-						<button onClick={this.toggleModal} type='button'>Close</button>
+						
 					</Modal>
-				)}
+				)} */}
 
-				{/* <Btn type="button" onClick={this.toggleModal}><FaPlus size={30} />
+				<Btn type="button" onClick={this.toggleModal}><FaPlus size={30} />
         </Btn>
         <b>Add new task</b>
        
@@ -103,7 +94,7 @@ export class App extends Component {
                   <TodoEditor addTodo={this.addTodo}/>
         </Modal>}
       
-        {this.state.todos.length > 0 && <TodoList todos={this.state.todos} onDelete={this.deleteTodo} onToggleCompleted={this.toggleCompleted} />} */}
+        {this.state.todos.length > 0 && <TodoList todos={this.state.todos} onDelete={this.deleteTodo} onToggleCompleted={this.toggleCompleted} />}
 				<GlobalStyle />
 			</>
 		)
